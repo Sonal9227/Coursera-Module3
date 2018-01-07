@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='NarrowItDownApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Narrow it down</title>
+  </head>
+  <body>
+    <h1>Narrow it Down app</h1>
+
+    <div ng-controller='NarrowItDownController as menu'>
+      <input type="text" ng-model="menu.searchTerm" placeholder="search term" ng-click="menu.clear()">
+      <!-- {{menu.searchTerm}} -->
+      <button ng-click="menu.searchTermInList(menu.searchTerm);">Narrow It Down For Me!</button>
+      <!-- <button ng-click="menu.clear()">Clear</button> -->
+      <div> {{ menu.searchError }} </div>
+      <found-list
+      founditems="menu.found"
+      on-remove="menu.removeItem($index)" searchitem="menu.searchTerm">
+      </found-list>
+
+    </div>
+  </body>
+</html>

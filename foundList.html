@@ -1,0 +1,9 @@
+<ul>
+  <li ng-if="found.searchitem.length" ng-repeat="item in found.founditems">
+    {{ "Name: " + item.name + ", " }} {{ "Short name: " + item.short_name + ", " }} {{ "Description: " + item.description }}
+    <button ng-click="found.onRemove({index: $index});">Don't want this one!</button>
+
+  </li>
+</ul>
+<!-- <div ng-if="found.searchTermInList()">Please enter search item.</div> -->
+<div ng-if="found.searchResult()">Nothing found</div>
