@@ -84,6 +84,7 @@ function NarrowItDownController(MenuSearchService) {
   // console.log("f", menu.found);
 
   menu.removeItem = function(itemIndex) {
+    // console.log(itemIndex);
     MenuSearchService.removeItem(itemIndex);
   }
 
@@ -148,6 +149,7 @@ function MenuSearchService($http, ApiBasePath) {
   };
 
   service.removeItem = function(itemIndex) {
+    // console.log(itemIndex);
     foundItems.splice(itemIndex, 1);
   };
 
